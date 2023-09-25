@@ -109,13 +109,15 @@ En este momento, cuando hacemos click sobre el nombre de un personaje nos debe r
 
 ```js
 useEffect(() => {
-   axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
-      if (data.name) {
-         setCharacter(data);
-      } else {
-         window.alert('No hay personajes con ese ID');
+   axios(`https://rym2.up.railway.app/api/character/${id}?key={tuApiKey}`).then(
+      ({ data }) => {
+         if (data.name) {
+            setCharacter(data);
+         } else {
+            window.alert('No hay personajes con ese ID');
+         }
       }
-   });
+   );
    return setCharacter({});
 }, [id]);
 ```

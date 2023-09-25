@@ -143,6 +143,10 @@ Ahora nos dirigiremos a la **`SearchBar`** para realizar algunas modificaciones.
 
 ### **👩‍💻 EJERCICIO 7 | API Connection**
 
+En este ejercicio conectaremos nuestra aplicación con la API de Rick & Morty mediante esta URL: **`https://rym2.up.railway.app/api/character/10?key={tuApiKey}`**.
+
+Donde tu APIKEY está compuesta de la siguiente manera: **`pi-{usuario-de-github}`**. Recuerda que tu usuario de GitHub debe ir en minúsculas, por ejemplo: **pi-misuaurio**.
+
 Ahora modificaremos la función **`onSearch`** para que busque nuevos personajes en la API de [**Rick & Morty**](https://rickandmortyapi.com). Para esto:
 
 1. Instala la dependencia "**axios**". Una vez instala impórtala en el componente **`App.js`**.
@@ -151,13 +155,15 @@ Ahora modificaremos la función **`onSearch`** para que busque nuevos personajes
 
 ```js
 function onSearch(id) {
-   axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
-      if (data.name) {
-         setCharacters((oldChars) => [...oldChars, data]);
-      } else {
-         window.alert('¡No hay personajes con este ID!');
+   axios(`https://rym2.up.railway.app/api/character/${id}?key={tuApiKey}`).then(
+      ({ data }) => {
+         if (data.name) {
+            setCharacters((oldChars) => [...oldChars, data]);
+         } else {
+            window.alert('¡No hay personajes con este ID!');
+         }
       }
-   });
+   );
 }
 ```
 
