@@ -15,6 +15,7 @@
 
 function ToDo(description) {
   // Tu código acá:
+  ss
 }
 
 // Agregar un método denominado 'completeToDo' al prototipo de la clase ToDo
