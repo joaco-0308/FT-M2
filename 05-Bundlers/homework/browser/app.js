@@ -1,4 +1,4 @@
-(function () {
+
   var whiteboard = window.whiteboard;
   var socket = window.io(window.location.origin);
 
@@ -22,4 +22,3 @@
   whiteboard.on("draw", function (start, end, color) {
     socket.emit("draw", start, end, color);
   });
-})();
